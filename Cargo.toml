@@ -1,0 +1,41 @@
+[package]
+name = "mjs-sys"
+version = "0.0.1"
+edition = "2018"
+license = "MIT"
+keywords = ["mjs", "script"]
+authors = ["Paul Rouget <me@paulrouget.com>"]
+repository = "https://github.com/paulrouget/mjs-sys"
+documentation = "https://docs.rs/mjs-sys"
+description = "Rust mJS Bindings"
+publish = false
+readme = "README.md"
+
+[build-dependencies]
+cc = "1.0"
+bindgen = "0.53"
+
+[dependencies]
+cty = "0.2"
+cstr_core = { version = "0.2", default-features = false }
+
+[features]
+platform-custom = []
+platform-unix = []
+platform-windows = []
+platform-esp32 = []
+platform-esp8266 = []
+platform-cc3100 = []
+platform-cc3200 = []
+platform-cc3220 = []
+platform-msp432 = []
+platform-tm4c129 = []
+platform-mbed = []
+platform-wince = []
+platform-nxp_lpc = []
+platform-nxp_kinetis = []
+platform-nrf51 = []
+platform-nrf52 = []
+platform-pic32 = []
+platform-rs14100 = []
+platform-stm32 = []

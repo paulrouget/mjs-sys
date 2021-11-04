@@ -1,0 +1,3 @@
+[submodule "mjs"]
+	path = mjs
+	url = git@github.com:paulrouget/mjs.git

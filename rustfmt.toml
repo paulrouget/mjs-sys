@@ -1,0 +1,11 @@
+edition = "2018"
+tab_spaces = 2
+use_try_shorthand = true
+where_single_line = true
+wrap_comments = true
+match_block_trailing_comma = true
+binop_separator = "Back"
+reorder_imports = true
+group_imports = "StdExternalCrate"
+report_fixme = "Always"
+report_todo = "Always"
