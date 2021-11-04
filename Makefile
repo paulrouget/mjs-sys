@@ -9,3 +9,6 @@ doc:
 
 fmt:
 	cargo +nightly fmt
+
+public:
+	cargo publish --features "platform-unix"
