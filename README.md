@@ -14,7 +14,7 @@ From [mJS repository](https://github.com/cesanta/mjs):
 
 ```toml
 [dependencies]
-mjs-sys = { version = "0.0.1", features = ["platform-nrf52"] }
+mjs-sys = { version = "0.1", features = ["platform-nrf52"] }
 ```
 
 ## Example
