@@ -1,4 +1,8 @@
-# Rust mJS Bindings
+[![Build Status](https://github.com/paulrouget/mjs-sys/actions/workflows/main.yml/badge.svg)](https://github.com/paulrouget/mjs-sys/actions)
+[![crates.io](https://img.shields.io/crates/v/mjs-sys?logo=rust)](https://crates.io/crates/mjs-sys/)
+[![API Docs](https://docs.rs/mjs=sys/badge.svg?logo=docs-rs)](https://docs.rs/mjs=sys/)
+
+# no_std Rust mJS Bindings
 
 From [mJS repository](https://github.com/cesanta/mjs):
 

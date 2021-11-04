@@ -4,11 +4,10 @@
 //!
 //! ## Life time considerations:
 //!
-//! JS value lifetime hasn't been properly solidified yet.
-//! Calls to `exec()` or `call()` might make invalidate
+//! [Val] lifetime hasn't been properly solidified yet.
+//! Calls to [`VM::exec()`] or [`Val::call()`] might make invalidate
 //! some previously acquired values.
-//!
-//! Use `own()` to make sure a JS value is not garbage collected.
+//! Use [`Val::own()`] to make sure a JS value is not garbage collected.
 
 #![no_std]
 #![deny(missing_docs, trivial_numeric_casts, unused_extern_crates)]
@@ -39,15 +38,17 @@ mod sys {
 }
 
 use cstr_core::CStr;
-pub use sys::*;
+// Inner mJS object
+pub use sys::mjs;
+use sys::*;
 
-/// The mJS virtual machine
+/// mJS virtual machine
 #[derive(Clone)]
 pub struct VM {
   inner: *mut mjs,
 }
 
-/// The JS value
+/// JS value
 pub struct Val {
   vm: VM,
   inner: mjs_val_t,

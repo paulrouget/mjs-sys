@@ -1,14 +1,13 @@
 [package]
 name = "mjs-sys"
-version = "0.0.1"
+version = "0.1.0"
 edition = "2018"
 license = "MIT"
-keywords = ["mjs", "script"]
+keywords = ["mjs", "js", "javascript", "no_std", "embedded"]
 authors = ["Paul Rouget <me@paulrouget.com>"]
 repository = "https://github.com/paulrouget/mjs-sys"
 documentation = "https://docs.rs/mjs-sys"
 description = "Rust mJS Bindings"
-publish = false
 readme = "README.md"
 
 [build-dependencies]
