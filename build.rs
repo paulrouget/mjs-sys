@@ -8,81 +8,66 @@ fn main() {
 
   // From mjs.h
 
-  // #define CS_P_CUSTOM 0
-  #[cfg(feature = "platform-custom")]
-  let platform = Some("0");
-
-  // #define CS_P_UNIX 1
-  #[cfg(feature = "platform-unix")]
-  let platform = Some("1");
-
-  // #define CS_P_WINDOWS 2
-  #[cfg(feature = "platform-windows")]
-  let platform = Some("2");
-
-  // #define CS_P_ESP32 15
-  #[cfg(feature = "platform-esp32")]
-  let platform = Some("15");
-
-  // #define CS_P_ESP8266 3
-  #[cfg(feature = "platform-esp8266")]
-  let platform = Some("3");
-
-  // #define CS_P_CC3100 6
-  #[cfg(feature = "platform-cc3100")]
-  let platform = Some("6");
-
-  // #define CS_P_CC3200 4
-  #[cfg(feature = "platform-cc3200")]
-  let platform = Some("4");
-
-  // #define CS_P_CC3220 17
-  #[cfg(feature = "platform-cc3220")]
-  let platform = Some("17");
-
-  // #define CS_P_MSP432 5
-  #[cfg(feature = "platform-msp432")]
-  let platform = Some("5");
-
-  // #define CS_P_TM4C129 14
-  #[cfg(feature = "platform-tm4c129")]
-  let platform = Some("14");
-
-  // #define CS_P_MBED 7
-  #[cfg(feature = "platform-mbed")]
-  let platform = Some("7");
-
-  // #define CS_P_WINCE 8
-  #[cfg(feature = "platform-wince")]
-  let platform = Some("8");
-
-  // #define CS_P_NXP_LPC 13
-  #[cfg(feature = "platform-nxp_lpc")]
-  let platform = Some("13");
-
-  // #define CS_P_NXP_KINETIS 9
-  #[cfg(feature = "platform-nxp_kinetis")]
-  let platform = Some("9");
-
-  // #define CS_P_NRF51 12
-  #[cfg(feature = "platform-nrf51")]
-  let platform = Some("12");
-
-  // #define CS_P_NRF52 10
-  #[cfg(feature = "platform-nrf52")]
-  let platform = Some("10");
-
-  // #define CS_P_PIC32 11
-  #[cfg(feature = "platform-pic32")]
-  let platform = Some("11");
-
-  // #define CS_P_RS14100 18
-  #[cfg(feature = "platform-rs14100")]
-  let platform = Some("18");
-
-  // #define CS_P_STM32 16
-  #[cfg(feature = "platform-stm32")]
-  let platform = Some("16");
+  let platform = if cfg!(feature = "platform-custom") {
+    // #define CS_P_CUSTOM 0
+    Some("0")
+  } else if cfg!(feature = "platform-unix") {
+    // #define CS_P_UNIX 1
+    Some("1")
+  } else if cfg!(feature = "platform-windows") {
+    // #define CS_P_WINDOWS 2
+    Some("2")
+  } else if cfg!(feature = "platform-esp32") {
+    // #define CS_P_ESP32 15
+    Some("15")
+  } else if cfg!(feature = "platform-esp8266") {
+    // #define CS_P_ESP8266 3
+    Some("3")
+  } else if cfg!(feature = "platform-cc3100") {
+    // #define CS_P_CC3100 6
+    Some("6")
+  } else if cfg!(feature = "platform-cc3200") {
+    // #define CS_P_CC3200 4
+    Some("4")
+  } else if cfg!(feature = "platform-cc3220") {
+    // #define CS_P_CC3220 17
+    Some("17")
+  } else if cfg!(feature = "platform-msp432") {
+    // #define CS_P_MSP432 5
+    Some("5")
+  } else if cfg!(feature = "platform-tm4c129") {
+    // #define CS_P_TM4C129 14
+    Some("14")
+  } else if cfg!(feature = "platform-mbed") {
+    // #define CS_P_MBED 7
+    Some("7")
+  } else if cfg!(feature = "platform-wince") {
+    // #define CS_P_WINCE 8
+    Some("8")
+  } else if cfg!(feature = "platform-nxp_lpc") {
+    // #define CS_P_NXP_LPC 13
+    Some("13")
+  } else if cfg!(feature = "platform-nxp_kinetis") {
+    // #define CS_P_NXP_KINETIS 9
+    Some("9")
+  } else if cfg!(feature = "platform-nrf51") {
+    // #define CS_P_NRF51 12
+    Some("12")
+  } else if cfg!(feature = "platform-nrf52") {
+    // #define CS_P_NRF52 10
+    Some("10")
+  } else if cfg!(feature = "platform-pic32") {
+    // #define CS_P_PIC32 11
+    Some("11")
+  } else if cfg!(feature = "platform-rs14100") {
+    // #define CS_P_RS14100 18
+    Some("18")
+  } else if cfg!(feature = "platform-stm32") {
+    // #define CS_P_STM32 16
+    Some("16")
+  } else {
+    None
+  };
 
   cc::Build::new()
     .file("mjs/mjs.c")
