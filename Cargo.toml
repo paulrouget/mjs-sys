@@ -1,6 +1,6 @@
 [package]
 name = "mjs-sys"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2018"
 license = "MIT"
 keywords = ["mjs", "js", "javascript", "no_std", "embedded"]
